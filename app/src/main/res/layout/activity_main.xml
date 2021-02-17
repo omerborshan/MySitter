@@ -33,9 +33,9 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/dog2"
+                android:onClick="onBabySitterClick"
                 android:padding="10dp"
-                />
+                android:src="@drawable/dog2" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -48,9 +48,9 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/baby2"
+                android:onClick="onDogSitterClick"
                 android:padding="10dp"
-                />
+                android:src="@drawable/baby2" />
         </androidx.cardview.widget.CardView>
     </GridLayout>
 </LinearLayout>
