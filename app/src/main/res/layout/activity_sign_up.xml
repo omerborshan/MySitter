@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/white">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:gravity="center"
+        android:layout_marginTop="50dp"
+        android:textSize="50sp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Join our beautiful world!"
+        android:gravity="center"
+        android:textSize="16sp"
+        />
+
+    <EditText
+        android:id="@+id/emailSignUp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_width="300dp"
+        android:hint="Email"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/passwordSignUp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_width="300dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/rePasswordSignUp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_width="300dp"
+        android:inputType="textPassword"
+        android:hint="Re-Password"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/signUpBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign up"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        />
+
+    <Button
+        android:id="@+id/moveToLoginFromRegisterBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:text="Already have an account?  Login"
+        android:textSize="10dp" />
+
+<!--    <ImageView-->
+<!--        android:visibility="gone"-->
+<!--        android:layout_width="350dp"-->
+<!--        android:layout_height="300dp"-->
+<!--        android:background="@drawable/ic_undraw_mobile_login_ikmv"-->
+<!--        android:layout_gravity="center"-->
+<!--        />-->
+</LinearLayout>

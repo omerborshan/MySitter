@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MySitter">
-        <activity android:name=".activities.HomeActivity"></activity>
+        <activity android:name=".activities.UserDetails"></activity>
+        <activity android:name=".activities.Login" />
+        <activity android:name=".activities.SignUp" />
+        <activity android:name=".activities.HomeActivity" />
         <activity
             android:name=".RegistrationPage"
             android:exported="true" />

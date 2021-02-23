@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:gravity="center"
+        android:layout_marginTop="50dp"
+        android:textSize="50sp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="sign in to a whole new world!"
+        android:gravity="center"
+        android:textSize="16sp"
+        />
+
+    <EditText
+        android:id="@+id/emailLogin"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_width="300dp"
+        android:hint="Email"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/passwordLogin"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_width="300dp"
+        android:hint="Password"
+        android:layout_height="wrap_content"/>
+
+
+    <Button
+        android:id="@+id/loginBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:layout_gravity="center"
+        />
+
+    <Button
+        android:id="@+id/signUpBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="move to sign up"
+        android:textSize="10dp"
+        android:background="@color/white"/>
+
+<!--    <ImageView-->
+<!--        android:layout_width="350dp"-->
+<!--        android:layout_height="300dp"-->
+<!--        android:background="@drawable/ic_undraw_mobile_login_ikmv"-->
+<!--        android:layout_gravity="center"-->
+<!--        />-->
+</LinearLayout>
