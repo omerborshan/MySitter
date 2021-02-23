@@ -8,16 +8,20 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.mysitter.R;
 import com.example.mysitter.fragments.AboutFragment;
 import com.example.mysitter.fragments.EmployeeFragment;
+import com.example.mysitter.fragments.LoggedInUserFragment;
 import com.example.mysitter.fragments.RegisterFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeActivity extends AppCompatActivity {
 
     private FragmentManager fragmentManager;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +33,8 @@ public class HomeActivity extends AppCompatActivity {
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
+
+        mAuth = FirebaseAuth.getInstance();
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
@@ -43,6 +49,7 @@ public class HomeActivity extends AppCompatActivity {
                         case R.id.nav_register:
                             selectedFragment = new RegisterFragment();
                             break;
+
                         case R.id.nav_about:
                             selectedFragment = new AboutFragment();
                             break;

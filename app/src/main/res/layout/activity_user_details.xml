@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:text="Welcome to MySitter Community"
+        android:textSize="20dp"
+        android:id="@+id/RegistrationTitle"
+        />
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Full name"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:id="@+id/fullNameText"
+        android:drawableStart="@drawable/ic_fullname"
+        android:drawablePadding="12dp"
+        android:paddingLeft="15dp"
+
+        />
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:hint="Facebook link"
+        android:id="@+id/facebookLinkText"
+        android:drawableStart="@drawable/ic_email"
+        android:drawablePadding="12dp"
+        android:paddingLeft="15dp"
+
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <EditText
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:hint="Age"
+            android:layout_weight="1"
+            android:layout_marginTop="30dp"
+            android:id="@+id/ageText"
+            android:drawablePadding="20dp"
+            android:drawableStart="@drawable/ic_age_temp"
+            android:paddingLeft="15dp"
+            />
+        <EditText android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:hint="Hourly price"
+            android:layout_weight="1"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/hourlyPriceText"
+            android:drawableStart="@drawable/ic_price"
+            android:drawablePadding="12dp"
+            android:paddingLeft="15dp"
+
+            />
+    </LinearLayout>
+    <EditText android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:hint="Upload an ID Image"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:id="@+id/RegistrationImage"
+        android:drawableStart="@drawable/ic_image"
+        android:drawablePadding="12dp"
+        android:paddingLeft="15dp"
+        />
+
+    <Button
+        android:id="@+id/updateUserProfileBtn"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:text="Join us!" />
+</LinearLayout>
