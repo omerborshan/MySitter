@@ -6,9 +6,53 @@
     tools:context=".fragments.RegisterFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="This is Register Fragment" />
+        android:padding="25dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hello we happy u decided to join our community!"
+            android:gravity="center"
+            android:textSize="25sp"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            style="?android:attr/buttonBarStyle"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            >
+
+            <Button
+                android:id="@+id/moveToLoginFromRegisterBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_alignParentStart="true"
+                />
+
+            <Button
+                android:id="@+id/moveToSignUpBtn"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="Sign Up" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
 
 </FrameLayout>
