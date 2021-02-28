@@ -7,12 +7,19 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:text="What can i do for you today?"
-        android:textAlignment="center"
-        android:textSize="25sp"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        />
+        android:layout_marginTop="15dp"
+        android:text="Welcome To Mysitter!"
+        android:textAlignment="center"
+        android:textSize="25sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Who can I babysit for you?"
+        android:layout_gravity="center"
+        android:layout_marginBottom="26dp"/>
 
 
     <GridLayout
@@ -25,7 +32,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="230dp"
             android:layout_height="230dp"
-            app:cardElevation="15dp"
+            app:cardElevation="8dp"
             app:cardCornerRadius="30dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp">
@@ -41,8 +48,8 @@
         <androidx.cardview.widget.CardView
             android:layout_width="230dp"
             android:layout_height="230dp"
-            app:cardElevation="10dp"
-            app:cardCornerRadius="18dp"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="30dp"
             android:layout_gravity="center">
 
             <ImageView

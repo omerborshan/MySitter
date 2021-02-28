@@ -6,16 +6,9 @@
     tools:context=".fragments.EmployeeFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="This is Employee Fragment" />
-
-    <Button
-        android:id="@+id/moveToRegisterBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="250dp"
-        android:text="Button" />
+        android:layout_height="match_parent"/>
 
 </FrameLayout>

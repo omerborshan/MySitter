@@ -56,8 +56,8 @@ public class UserDetails extends AppCompatActivity implements View.OnClickListen
 
         String fullNameStr = fullName.getText().toString().trim();
         String facebookLinkStr = facebookLink.getText().toString().trim();
-        String ageStr = age.getText().toString().trim();
-        String hourlyPriceStr = hourlyPrice.getText().toString().trim();
+        int ageStr = Integer.parseInt(age.getText().toString().trim());
+        int hourlyPriceStr = Integer.parseInt(hourlyPrice.getText().toString().trim());
 
         userID = mAuth.getCurrentUser().getUid();
 
