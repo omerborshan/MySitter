@@ -19,14 +19,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void onBabySitterClick(View view) {
         Intent intent = new Intent(this,HomeActivity.class);
-//        intent.putExtra(KEY,this.result.getText().toString());
+        intent.putExtra("type", "baby");
         startActivity(intent);
 
     }
 
     public void onDogSitterClick(View view) {
         Intent intent = new Intent(this,HomeActivity.class);
-//        intent.putExtra(KEY,this.result.getText().toString());
+        intent.putExtra("type", "dog");
         startActivity(intent);
     }
 }

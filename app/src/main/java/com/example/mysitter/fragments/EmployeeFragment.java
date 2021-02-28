@@ -26,7 +26,7 @@ import com.google.firebase.firestore.Query;
  */
 public class EmployeeFragment extends Fragment {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private CollectionReference usersRef = db.collection("users");
+    private CollectionReference sittersRef;
     private EmployeeCardAdapter adapter;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -74,8 +74,10 @@ public class EmployeeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_employee, container, false);
+        String typeText = getArguments().getString("type");
+        sittersRef = db.collection(typeText);
 
-        Query query =  usersRef.orderBy("fullName",Query.Direction.DESCENDING);
+        Query query =  sittersRef.orderBy("fullName",Query.Direction.DESCENDING);
 
         FirestoreRecyclerOptions<EmployeeModel> options = new FirestoreRecyclerOptions.Builder<EmployeeModel>()
                 .setQuery(query, EmployeeModel.class)

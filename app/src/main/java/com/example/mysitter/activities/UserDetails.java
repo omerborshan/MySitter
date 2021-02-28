@@ -6,8 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.mysitter.R;
@@ -20,14 +23,15 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
-public class UserDetails extends AppCompatActivity implements View.OnClickListener {
+public class UserDetails extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
     private EditText fullName, facebookLink, age, hourlyPrice;
     private String userID;
     private FirebaseAuth mAuth;
     private FirebaseFirestore fStore;
-
+    private Spinner spinner;
     private Button updateUserProfileBtn;
+    private String type;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +42,13 @@ public class UserDetails extends AppCompatActivity implements View.OnClickListen
         facebookLink = findViewById(R.id.facebookLinkText);
         age = findViewById(R.id.ageText);
         hourlyPrice = findViewById(R.id.hourlyPriceText);
+
+        spinner = findViewById(R.id.spinner_types);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.types, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
+
         updateUserProfileBtn = (Button)findViewById(R.id.updateUserProfileBtn);
         updateUserProfileBtn.setOnClickListener(this);
 
@@ -61,7 +72,7 @@ public class UserDetails extends AppCompatActivity implements View.OnClickListen
 
         userID = mAuth.getCurrentUser().getUid();
 
-        DocumentReference documentReference = fStore.collection("users").document(userID);
+        DocumentReference documentReference = fStore.collection(type).document(userID);
         Map<String,Object> user = new HashMap<>();
         user.put("fullName", fullNameStr);
         user.put("facebookLink", facebookLinkStr);
@@ -79,5 +90,16 @@ public class UserDetails extends AppCompatActivity implements View.OnClickListen
                 Toast.makeText(UserDetails.this, e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        String typeText = adapterView.getItemAtPosition(i).toString();
+        this.type = typeText;
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }

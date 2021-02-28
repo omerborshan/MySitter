@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -22,19 +23,34 @@ public class HomeActivity extends AppCompatActivity {
 
     private FragmentManager fragmentManager;
     private FirebaseAuth mAuth;
+    public String type;
+    Bundle bundle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        Intent i = getIntent();
+        type = i.getExtras().getString("type","");
+
+        bundle = new Bundle();
+        bundle.putString("type", type);
+
+        Fragment startFragment = new EmployeeFragment();
+        startFragment.setArguments(bundle);
+
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                new EmployeeFragment()).commit();
+                startFragment).commit();
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
         mAuth = FirebaseAuth.getInstance();
+
+
+
+        Toast.makeText(this, type, Toast.LENGTH_SHORT).show();
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
@@ -45,6 +61,7 @@ public class HomeActivity extends AppCompatActivity {
                     switch (item.getItemId()){
                         case R.id.nav_list:
                             selectedFragment = new EmployeeFragment();
+                            selectedFragment.setArguments(bundle);
                             break;
                         case R.id.nav_register:
                             selectedFragment = new RegisterFragment();

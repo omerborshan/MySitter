@@ -69,6 +69,14 @@
 
             />
     </LinearLayout>
+
+    <Spinner
+        android:id="@+id/spinner_types"
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        />
     <EditText android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:hint="Upload an ID Image"
