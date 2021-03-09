@@ -24,6 +24,7 @@ public class HomeActivity extends AppCompatActivity {
     private FragmentManager fragmentManager;
     private FirebaseAuth mAuth;
     public String type;
+    private Boolean loggedIn = true;
     Bundle bundle;
 
     @Override
@@ -49,7 +50,6 @@ public class HomeActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
 
-
         Toast.makeText(this, type, Toast.LENGTH_SHORT).show();
     }
 
@@ -64,7 +64,12 @@ public class HomeActivity extends AppCompatActivity {
                             selectedFragment.setArguments(bundle);
                             break;
                         case R.id.nav_register:
-                            selectedFragment = new RegisterFragment();
+                            Toast.makeText(HomeActivity.this, "Hey", Toast.LENGTH_SHORT).show();
+                            if(mAuth.getCurrentUser() != null){
+                                selectedFragment = new LoggedInUserFragment();
+                            } else {
+                                selectedFragment = new RegisterFragment();
+                            }
                             break;
 
                         case R.id.nav_about:

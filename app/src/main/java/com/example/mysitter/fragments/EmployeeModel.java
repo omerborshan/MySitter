@@ -5,15 +5,17 @@ public class EmployeeModel {
     private String fullName;
     private int age;
     private int hourlyPrice;
+    private String profileImage;
 
     public EmployeeModel() {
 
     }
 
-    public EmployeeModel(String name, int age, int price) {
+    public EmployeeModel(String name, int age, int price, String profileImage) {
         setFullName(name);
         setAge(age);
         setHourlyPrice(price);
+        setProfileImage(profileImage);
     }
 
     public String getFullName() {
@@ -38,6 +40,14 @@ public class EmployeeModel {
 
     public void setHourlyPrice(int hourlyPrice) {
         this.hourlyPrice = hourlyPrice;
+    }
+
+    public String getProfileImage() {
+        return profileImage;
+    }
+
+    public void setProfileImage(String profileImage) {
+        this.profileImage = profileImage;
     }
 
 }
