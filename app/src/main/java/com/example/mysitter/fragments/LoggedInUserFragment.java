@@ -1,5 +1,6 @@
 package com.example.mysitter.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,8 +8,14 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.example.mysitter.R;
+import com.example.mysitter.activities.Login;
+import com.example.mysitter.activities.MainActivity;
+import com.google.firebase.auth.FirebaseAuth;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,6 +28,9 @@ public class LoggedInUserFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -61,6 +71,21 @@ public class LoggedInUserFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_logged_in_user, container, false);
+        View view = inflater.inflate(R.layout.fragment_logged_in_user, container, false);
+        TextView welcomeUser = view.findViewById(R.id.welcomeUser);
+        LottieAnimationView welcomeAnimation = view.findViewById(R.id.welcomeAnimation);
+        Button signOutBtn = view.findViewById(R.id.signOutBtn);
+
+        welcomeUser.setText("Hello" + mAuth.getCurrentUser().getDisplayName());
+
+        signOutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mAuth.signOut();
+                startActivity(new Intent(getContext(), MainActivity.class));
+            }
+        });
+
+        return view;
     }
 }

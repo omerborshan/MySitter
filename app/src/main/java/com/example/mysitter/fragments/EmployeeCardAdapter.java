@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.mysitter.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.squareup.picasso.Picasso;
 
 public class EmployeeCardAdapter extends FirestoreRecyclerAdapter<EmployeeModel,EmployeeCardAdapter.EmployeeHolder> {
 
@@ -24,6 +25,7 @@ public class EmployeeCardAdapter extends FirestoreRecyclerAdapter<EmployeeModel,
         holder.textViewName.setText( model.getFullName());
         holder.textViewAge.setText(String.valueOf(model.getAge()));
         holder.textViewPrice.setText(String.valueOf(model.getHourlyPrice()));
+        Picasso.get().load(model.getProfileImage()).into(holder.profileImage);
     }
 
     @NonNull
@@ -35,13 +37,14 @@ public class EmployeeCardAdapter extends FirestoreRecyclerAdapter<EmployeeModel,
 
     class EmployeeHolder extends RecyclerView.ViewHolder {
         TextView textViewName, textViewAge, textViewPrice;
-        ImageView employeeImage;
+        ImageView profileImage;
 
         public EmployeeHolder(@NonNull View itemView) {
             super(itemView);
             textViewName = itemView.findViewById(R.id.name_text_card);
             textViewAge = itemView.findViewById(R.id.age_text_card);
             textViewPrice = itemView.findViewById(R.id.price_text_card);
+            profileImage = itemView.findViewById(R.id.image_card);
         }
     }
 }
