@@ -69,16 +69,47 @@
 
             />
     </LinearLayout>
-    <EditText android:layout_width="250dp"
+
+    <Spinner
+        android:id="@+id/spinner_types"
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Upload an ID Image"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:id="@+id/RegistrationImage"
-        android:drawableStart="@drawable/ic_image"
-        android:drawablePadding="12dp"
-        android:paddingLeft="15dp"
         />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center">
+
+        <Button
+            android:id="@+id/uploadUserImageBtn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Upload image"
+            android:background="@color/black"
+            android:gravity="center"
+            android:drawableStart="@drawable/ic_image"
+            android:drawablePadding="12dp"
+            />
+        <ImageView
+            android:id="@+id/doneIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="12dp"
+            android:alpha="0"
+            android:src="@drawable/ic_done"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/profileImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"/>
 
     <Button
         android:id="@+id/updateUserProfileBtn"
