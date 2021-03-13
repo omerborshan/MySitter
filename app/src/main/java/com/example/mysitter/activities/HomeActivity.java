@@ -9,7 +9,6 @@ import androidx.fragment.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.example.mysitter.R;
 import com.example.mysitter.fragments.AboutFragment;
@@ -24,7 +23,6 @@ public class HomeActivity extends AppCompatActivity {
     private FragmentManager fragmentManager;
     private FirebaseAuth mAuth;
     public String type;
-    private Boolean loggedIn = true;
     Bundle bundle;
 
     @Override
@@ -49,8 +47,6 @@ public class HomeActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-
-        Toast.makeText(this, type, Toast.LENGTH_SHORT).show();
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
@@ -64,7 +60,6 @@ public class HomeActivity extends AppCompatActivity {
                             selectedFragment.setArguments(bundle);
                             break;
                         case R.id.nav_register:
-                            Toast.makeText(HomeActivity.this, "Hey", Toast.LENGTH_SHORT).show();
                             if(mAuth.getCurrentUser() != null){
                                 selectedFragment = new LoggedInUserFragment();
                             } else {

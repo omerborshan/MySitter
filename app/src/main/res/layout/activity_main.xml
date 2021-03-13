@@ -17,7 +17,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Who can I babysit for you?"
+        android:text="Who would you like us to keep?"
         android:layout_gravity="center"
         android:layout_marginBottom="26dp"/>
 

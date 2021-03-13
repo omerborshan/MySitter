@@ -23,8 +23,9 @@ public class EmployeeCardAdapter extends FirestoreRecyclerAdapter<EmployeeModel,
     @Override
     protected void onBindViewHolder(@NonNull EmployeeHolder holder, int position, @NonNull EmployeeModel model) {
         holder.textViewName.setText( model.getFullName());
-        holder.textViewAge.setText(String.valueOf(model.getAge()));
-        holder.textViewPrice.setText(String.valueOf(model.getHourlyPrice()));
+        holder.textViewAge.setText("Age: " + String.valueOf(model.getAge()));
+        holder.textViewPrice.setText("Price: " + String.valueOf(model.getHourlyPrice()));
+        holder.textViewPhone.setText(String.valueOf(model.getPhoneNumber()));
         Picasso.get().load(model.getProfileImage()).into(holder.profileImage);
     }
 
@@ -36,11 +37,12 @@ public class EmployeeCardAdapter extends FirestoreRecyclerAdapter<EmployeeModel,
     }
 
     class EmployeeHolder extends RecyclerView.ViewHolder {
-        TextView textViewName, textViewAge, textViewPrice;
+        TextView textViewName, textViewAge, textViewPrice, textViewPhone;
         ImageView profileImage;
 
         public EmployeeHolder(@NonNull View itemView) {
             super(itemView);
+            textViewPhone = itemView.findViewById(R.id.phone_text_card);
             textViewName = itemView.findViewById(R.id.name_text_card);
             textViewAge = itemView.findViewById(R.id.age_text_card);
             textViewPrice = itemView.findViewById(R.id.price_text_card);

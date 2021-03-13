@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_height="match_parent"
+<RelativeLayout
+    android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:padding="15dp"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <TextView
+        android:layout_centerHorizontal="true"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
@@ -13,37 +14,45 @@
         android:text="Welcome to MySitter Community"
         android:textSize="20dp"
         android:id="@+id/RegistrationTitle"
+        android:layout_alignParentTop="true"
         />
     <EditText
+        android:layout_centerHorizontal="true"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:hint="Full name"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
         android:id="@+id/fullNameText"
         android:drawableStart="@drawable/ic_fullname"
         android:drawablePadding="12dp"
+        android:layout_marginTop="15dp"
         android:paddingLeft="15dp"
+        android:layout_below="@id/RegistrationTitle"
 
         />
     <EditText
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:hint="Facebook link"
         android:id="@+id/facebookLinkText"
         android:drawableStart="@drawable/ic_email"
         android:drawablePadding="12dp"
         android:paddingLeft="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/fullNameText"
 
         />
     <LinearLayout
+        android:id="@+id/AgePriceWrapper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
+        android:layout_marginRight="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/facebookLinkText">
 
         <EditText
             android:layout_width="150dp"
@@ -70,23 +79,44 @@
             />
     </LinearLayout>
 
+    <EditText
+        android:id="@+id/phoneNumberText"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:hint="Phone Number"
+        android:drawableStart="@drawable/ic_phone"
+        android:drawablePadding="12dp"
+        android:paddingLeft="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/AgePriceWrapper"
+
+        />
+
     <Spinner
         android:id="@+id/spinner_types"
         android:layout_marginTop="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/phoneNumberText"
         />
     <LinearLayout
+        android:id="@+id/imageWrapper"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="30dp"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/spinner_types">
 
         <Button
             android:id="@+id/uploadUserImageBtn"
             android:layout_width="150dp"
+            android:layout_marginLeft="46dp"
             android:layout_height="wrap_content"
             android:text="Upload image"
             android:background="@color/black"
@@ -96,6 +126,7 @@
             />
         <ImageView
             android:id="@+id/doneIcon"
+            android:layout_marginLeft="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -109,7 +140,9 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/imageWrapper"/>
 
     <Button
         android:id="@+id/updateUserProfileBtn"
@@ -117,5 +150,7 @@
         android:layout_height="50dp"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
-        android:text="Join us!" />
-</LinearLayout>
+        android:layout_centerHorizontal="true"
+        android:text="Join us!"
+        android:layout_below="@id/profileImageView"/>
+</RelativeLayout>

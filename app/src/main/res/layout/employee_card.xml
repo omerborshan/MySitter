@@ -26,6 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="My Name"
+            android:textStyle="bold"
             android:textSize="18sp"
             android:layout_marginEnd="15dp"
             android:layout_alignParentEnd="true"/>
@@ -50,6 +51,17 @@
             android:layout_toStartOf="@id/age_text_card"
             android:layout_below="@id/name_text_card"
             android:layout_marginEnd="30dp"/>
+
+        <TextView
+            android:id="@+id/phone_text_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0543139590"
+            android:layout_toStartOf="@id/price_text_card"
+            android:layout_below="@id/name_text_card"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            />
 
 
 

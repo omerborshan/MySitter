@@ -76,8 +76,6 @@ public class LoggedInUserFragment extends Fragment {
         LottieAnimationView welcomeAnimation = view.findViewById(R.id.welcomeAnimation);
         Button signOutBtn = view.findViewById(R.id.signOutBtn);
 
-        welcomeUser.setText("Hello" + mAuth.getCurrentUser().getDisplayName());
-
         signOutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

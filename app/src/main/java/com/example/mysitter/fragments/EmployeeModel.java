@@ -6,17 +6,29 @@ public class EmployeeModel {
     private int age;
     private int hourlyPrice;
     private String profileImage;
+    private String phoneNumber;
 
     public EmployeeModel() {
 
     }
 
-    public EmployeeModel(String name, int age, int price, String profileImage) {
+    public EmployeeModel(String name, int age, int price, String profileImage, String phoneNumber) {
         setFullName(name);
         setAge(age);
         setHourlyPrice(price);
         setProfileImage(profileImage);
+        setPhoneNumber(phoneNumber);
     }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+
 
     public String getFullName() {
         return fullName;

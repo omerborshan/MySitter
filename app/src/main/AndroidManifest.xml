@@ -10,21 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MySitter">
         <activity android:name=".activities.IntroActivity">
-
-        </activity>
-        <activity android:name=".activities.UserDetails" />
-        <activity android:name=".activities.Login" />
-        <activity android:name=".activities.SignUp" />
-        <activity android:name=".activities.HomeActivity" />
-        <activity
-            android:name=".RegistrationPage"
-            android:exported="true" />
-        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".activities.UserDetails" />
+        <activity android:name=".activities.Login" />
+        <activity android:name=".activities.SignUp" />
+        <activity android:name=".activities.HomeActivity" />
+        <activity android:name=".activities.MainActivity">
+
         </activity>
     </application>
 
