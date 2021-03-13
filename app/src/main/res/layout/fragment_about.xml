@@ -3,12 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="25dp"
     tools:context=".fragments.AboutFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello from About Fragment OMErR" />
+        android:gravity="center"
+        android:text="
+        About MySitter Community
+        MySitter  initiated at 2021 by Netanel Haim Pour and Omer Borshan during their Computer Science B.Sc.
+        The application offers two major services: Dogsitting, Babysitting.
+        We let people use our platform without registration – they can choose the best sitter in town.
+        If you want to join our community – you can register and offer your services, freely.
+        We believe that people believe in people. Hence, you can use real people recommendations in order to choose what’s best for you.
+        See you in the streets!
+       " />
 
 </FrameLayout>
