@@ -53,12 +53,12 @@ public class IntroActivity extends AppCompatActivity {
 
         //Animations set dog
         ObjectAnimator dog_in = ObjectAnimator.ofFloat(dog_animation,"alpha",1);
-        dog_in.setDuration(1000);
+        dog_in.setDuration(600);
         dog_in.setStartDelay(600);
 
         ObjectAnimator dog_out = ObjectAnimator.ofFloat(dog_animation,"translationX",800);
-        dog_out.setDuration(1000);
-        dog_out.setStartDelay(3000);
+        dog_out.setDuration(600);
+        dog_out.setStartDelay(1800);
 
         AnimatorSet dog_set = new AnimatorSet();
         dog_set.playTogether(dog_in,dog_out);
@@ -66,12 +66,12 @@ public class IntroActivity extends AppCompatActivity {
 
         //Animations set baby
         ObjectAnimator baby_in = ObjectAnimator.ofFloat(baby_animation,"translationX",0);
-        baby_in.setDuration(1000);
-        baby_in.setStartDelay(3000);
+        baby_in.setDuration(600);
+        baby_in.setStartDelay(1800);
 
         ObjectAnimator baby_out = ObjectAnimator.ofFloat(baby_animation,"alpha",0);
-        baby_out.setDuration(1000);
-        baby_out.setStartDelay(6600);
+        baby_out.setDuration(600);
+        baby_out.setStartDelay(3600);
 
         AnimatorSet baby_set = new AnimatorSet();
         baby_set.playTogether(baby_in,baby_out);

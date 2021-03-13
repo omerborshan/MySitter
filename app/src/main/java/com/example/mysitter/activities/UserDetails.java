@@ -34,7 +34,7 @@ import java.util.Map;
 
 public class UserDetails extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
-    private EditText fullName, facebookLink, age, hourlyPrice;
+    private EditText fullName, facebookLink, age, hourlyPrice, phoneNumber;
     private String userID;
     private FirebaseAuth mAuth;
     private FirebaseFirestore fStore;
@@ -54,6 +54,7 @@ public class UserDetails extends AppCompatActivity implements View.OnClickListen
         facebookLink = findViewById(R.id.facebookLinkText);
         age = findViewById(R.id.ageText);
         hourlyPrice = findViewById(R.id.hourlyPriceText);
+        phoneNumber = findViewById(R.id.phoneNumberText);
 
         uploadImageBtn = findViewById(R.id.uploadUserImageBtn);
         profileImage = findViewById(R.id.profileImageView);
@@ -120,6 +121,7 @@ public class UserDetails extends AppCompatActivity implements View.OnClickListen
 
         String fullNameStr = fullName.getText().toString().trim();
         String facebookLinkStr = facebookLink.getText().toString().trim();
+        String phoneNumberStr = phoneNumber.getText().toString().trim();
         int ageStr = Integer.parseInt(age.getText().toString().trim());
         int hourlyPriceStr = Integer.parseInt(hourlyPrice.getText().toString().trim());
 
@@ -136,10 +138,10 @@ public class UserDetails extends AppCompatActivity implements View.OnClickListen
                 user.put("age", ageStr);
                 user.put("hourlyPrice", hourlyPriceStr);
                 user.put("profileImage", uri.toString());
+                user.put("phoneNumber", phoneNumberStr);
                 documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        Toast.makeText(UserDetails.this, "Set Successfully" + userID, Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(UserDetails.this,MainActivity.class));
                     }
                 }).addOnFailureListener(new OnFailureListener() {

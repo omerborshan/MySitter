@@ -2,6 +2,18 @@
     <string name="app_name">MySitter</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_description">
+
+
+MySitter  initiated at 2021 by Netanel Haim Pour and Omer Borshan during their Computer Science B.Sc.\n
+The application offers Dogsitting and Babysitting.\n
+We let people use our platform without registration – they can choose the best sitter in town.\n
+If you want to join our community, you can register and offer your services, freely.\n
+We believe that people believe in people. Therefore, you can use real people recommendations in order to choose what’s best for you.\n
+        See you in the streets!
+
+    </string>
+    <string name="contact_group">Hello blank fragment</string>
 
     <string-array name="types">
         <item>baby</item>

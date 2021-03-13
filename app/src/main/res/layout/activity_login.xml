@@ -44,6 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login"
+        android:layout_marginTop="30dp"
         android:layout_gravity="center"
         />
 
@@ -53,8 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="move to sign up"
-        android:textSize="10dp"
-        android:background="@color/white"/>
+        android:textSize="10dp" />
 
 <!--    <ImageView-->
 <!--        android:layout_width="350dp"-->

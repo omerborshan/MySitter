@@ -4,11 +4,23 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.renderscript.Element;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.annotation.SuppressLint;
+import android.os.Bundle;
+//import android.provider.CalendarContract;
+import android.view.Gravity;
+import android.view.View;
+import android.widget.Toast;
+
 
 import com.example.mysitter.R;
+
+import java.util.Calendar;
+
+import mehdi.sakout.aboutpage.AboutPage;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,7 +37,6 @@ public class AboutFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
     public AboutFragment() {
         // Required empty public constructor
     }
@@ -55,12 +66,25 @@ public class AboutFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_about, container, false);
+       // View view = inflater.inflate(R.layout.fragment_about, container, false);
+       //return view;
+
+        return new AboutPage(getContext())
+                .isRTL(false)
+
+                .setDescription(getString(R.string.app_description))
+                .addEmail("mysitter@gmail.com", "Contact us via Email")
+                .addFacebook("http://www.facebook.com","MySitter Facebook")
+                .addGitHub("http://www.github.com","MySitter GitHub")
+
+                .create();
     }
+
 }

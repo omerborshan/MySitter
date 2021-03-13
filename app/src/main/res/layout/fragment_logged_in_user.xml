@@ -7,7 +7,7 @@
     tools:context=".fragments.LoggedInUserFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -16,7 +16,8 @@
             android:id="@+id/welcomeUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hello Eden"
+            android:text="Welcome Sitter!"
+            android:textSize="36sp"
             android:gravity="center"
             />
 
@@ -24,9 +25,12 @@
             android:id="@+id/welcomeAnimation"
             android:layout_width="300dp"
             android:layout_height="300dp"
-            app:lottie_rawRes="@raw/splash_baby"
+            app:lottie_rawRes="@raw/hello"
             app:lottie_autoPlay="true"
             android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="150dp"
+
             />
 
         <Button
@@ -34,9 +38,11 @@
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="sign out"/>
+            android:text="sign out"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"/>
 
-    </LinearLayout>
+    </RelativeLayout>
 
 
 </FrameLayout>
